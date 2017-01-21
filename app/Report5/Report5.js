@@ -9,7 +9,8 @@ app.controller('Report5Controller', function ($scope, $http) {
     var toDate = Math.floor(new Date($scope.toDate) / 1000);
     $http.get(url + "/geoStationary/" + fromDate + "/" + toDate)
       .then(function (response) {
-        $scope.myData = response.data == undefined ? [] : response.data;//.map(function(value){return{"Device":value}});
-      });
+        $scope.myData = response.data == undefined ? [] : response.data;
+        console.log($scope.myData)
+    });
   }
 });

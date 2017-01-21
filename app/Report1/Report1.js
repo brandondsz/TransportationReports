@@ -4,7 +4,7 @@ var app = angular.module('myApp.Report1', []);
 
 app.controller('Report1Controller', function ($scope, $http) {
 
-  $scope.myData = [];//getRecords();
+  $scope.myData = [];
 
   $scope.getRecords = function () {
     $http.get(url + "/devices")
