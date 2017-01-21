@@ -1,0 +1,14 @@
+<div ng-controller="Report6Controller">
+    <h3>Local System Health</h3>
+    <p>CPU and Memory utilization of the server.</p>
+    <form name="reportForm">
+        <div class="form-inline">
+            <input class="form-control" datetime-picker ng-model="fromDate" date-format="yyyy-MM-dd HH:mm:ss" required placeholder="from date time" />
+            <input class="form-control" datetime-picker ng-model="toDate" date-format="yyyy-MM-dd HH:mm:ss" required placeholder="to date time"
+            />
+            <button class="btn btn-primary" ng-disabled="reportForm.$invalid" ng-click="getRecords()" name="get records">Load Report</button>
+        </div>
+    </form>
+    <br>
+    <div ui-grid="{ data: myData }" class="grid"></div>
+</div>

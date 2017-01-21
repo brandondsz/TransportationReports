@@ -1,0 +1,17 @@
+<div ng-controller="Report4Controller">
+    <h3>Geo Dwell</h3>
+    <p>List of devices which were within 10km range of the below lat,lon and within the time range.</p>
+    <form name="reportForm">
+        <div class="form-inline">
+            <input class="form-control" type="number" step="0.0000001" ng-model="latitude" required placeholder="latitude" />
+            <input class="form-control" type="number" step="0.0000001" ng-model="longitude" required placeholder="longitude" />
+            <input class="form-control" datetime-picker ng-model="fromDate" date-format="yyyy-MM-dd HH:mm:ss" required
+                placeholder="from date time" />
+            <input class="form-control" datetime-picker ng-model="toDate" date-format="yyyy-MM-dd HH:mm:ss" required placeholder="to date time"
+            />
+            <button class="btn btn-primary" ng-disabled="reportForm.$invalid" ng-click="getRecords()" name="get records">Load Report</button>
+        </div>
+    </form>
+    <br>
+    <div ui-grid="{ data: myData }" class="grid"></div>
+</div>

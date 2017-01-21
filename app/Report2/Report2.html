@@ -1,0 +1,16 @@
+<div ng-controller="Report2Controller">
+    <h3>Geo Position</h3>
+    <p>Get all positions the device has been in between the given time ranges</p>
+    <form name="reportForm">
+        <div class="form-inline">
+            <input type="text" class="form-control" ng-model="deviceID" required placeholder="enter device ID" />
+            <input datetime-picker class="form-control" ng-model="fromDate" date-format="yyyy-MM-dd HH:mm:ss" required placeholder="from date time"
+            />
+            <input datetime-picker class="form-control" ng-model="toDate" date-format="yyyy-MM-dd HH:mm:ss" required placeholder="to date time"
+            />
+            <button class="btn btn-primary " ng-disabled="reportForm.$invalid" ng-click="getRecords()" name="get records">Load Report</button>
+        </div>
+    </form>
+    </br>
+    <div ui-grid="{ data: myData }" class="grid"></div>
+</div>
